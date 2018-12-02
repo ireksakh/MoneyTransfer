@@ -10,7 +10,7 @@ import com.revolut.service.AccountService;
 import org.glassfish.grizzly.http.server.HttpServer;
 
 import org.junit.After;
-import org.junit.Assert;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -20,7 +20,7 @@ public class MyResourceTest {
 
     private HttpServer server;
     private WebTarget target;
-    private AccountService accountService=new AccountService();
+
 
     @Before
     public void setUp() throws Exception {
@@ -52,11 +52,11 @@ public class MyResourceTest {
         assertEquals("Got it!", responseMsg);
     }
 
-   @Test
-    public void transfer(){
-       int status = target.path("money/transfer/1/2/1000").request().method("POST").getStatus();
-       assertEquals(status,Response.Status.OK.getStatusCode());
+    @Test
+    public void transfer() {
+        int status = target.path("money/transfer/1/2/1000").request().method("POST").getStatus();
+        assertEquals(status, Response.Status.OK.getStatusCode());
 
-   }
+    }
 
 }
